@@ -17,7 +17,7 @@ RegisterCommand('givecash', function(source, args)
         TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'Incorrect Player ID', length = 2500, style = { ['background-color'] = '#0321FF', ['color'] = '#ffffff' } })  
         return
     end
-    if tonumber(transferamount) not == 0 then
+    if tonumber(transferamount) ~= 0 then
         if playercash >= tonumber(transferamount) then
             xPlayer.removeMoney(transferamount)
             targetXPlayer.addMoney(transferamount)
